@@ -1,0 +1,47 @@
+#shop-info{
+  .form{
+    p{
+      margin-bottom: 0;
+      width: 100px;
+    }
+    .item{
+      margin-bottom: 15px;
+      input{
+        margin-right: 20px;
+        border-radius: 8px;
+        border: 1px solid #0d6efd;
+        width: 200px;
+        &:focus{
+          outline: none;
+        }
+      }
+      input[disabled]{
+        background-color: #ECECEC;
+      }
+      button{
+        background-color: #ffffff;
+        margin-right: 20px;
+        border: 1px solid #0d6efd;
+        border-radius: 8px;
+        padding: 6px 8px;
+        &:hover{
+          background-color: #0d6efd;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .btn-save{
+    button{
+      background-color: #ffffff;
+      margin-right: 20px;
+      border: 1px solid #0d6efd;
+      border-radius: 8px;
+      padding: 6px 8px;
+      &:hover{
+        background-color: #0d6efd;
+        color: #ffffff;
+      }
+    }
+  }
+}

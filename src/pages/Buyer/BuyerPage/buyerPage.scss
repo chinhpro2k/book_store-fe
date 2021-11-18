@@ -1,0 +1,11 @@
+.h-buyer-page {
+  display: flex;
+  padding: 1.5rem 0;
+  .h-buyer-page__sidebar {
+    width: 200px;
+  }
+  .h-buyer-page__content {
+    width: 1000px;
+    // background-color: blue;
+  }
+}

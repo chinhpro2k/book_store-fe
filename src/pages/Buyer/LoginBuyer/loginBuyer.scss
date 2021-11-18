@@ -1,0 +1,59 @@
+@import 'scss/variables';
+.h-login-buyer {
+  .h-lb-header {
+    height: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    .h-lb__logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $base-color;
+    }
+    .h-lb__title {
+      margin-left: 3rem;
+      font-size: 1.5rem;
+    }
+  }
+  .h-lb-container {
+    background-color: $base-color;
+    margin-bottom: calc(100vh - 700px);
+    .h-lb-content {
+      height: 35rem;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      display: flex;
+      .h-login__title {
+        width: 50%;
+        padding-top: 5rem;
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 5rem;
+
+        .h-login__brand {
+          height: 12rem;
+          padding-right: 1.5rem;
+          margin-right: 1.5rem;
+          line-height: 5rem;
+          border-right: 0.25rem solid white;
+        }
+        .h-login__slogan {
+          font-size: 2.5rem;
+          width: 150px;
+        }
+      }
+      .h-login__from {
+        width: 25rem;
+        margin: 4rem 5rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: $elevations-4;
+      }
+    }
+  }
+}

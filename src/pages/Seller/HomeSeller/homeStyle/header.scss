@@ -1,0 +1,38 @@
+#header-seller {
+  padding-top: 12px;
+
+  .container {
+    .logo {
+      width: 150px;
+      height: 70px;
+      background-color: #ECECEC;
+
+      img {
+        width: 150px;
+        height: 70px;
+      }
+    }
+
+    .login-register {
+      .btn-register {
+          width: 150px;
+          height: 40px;
+          border-radius: 12px;
+          border: 1px solid #00b14f;
+          background-color: #ffffff;
+          color: #00b14f;
+      }
+      .btn-login {
+          width: 150px;
+          height: 40px;
+          border-radius: 12px;
+          margin-right: 12px;
+          background-color: #00b14f;
+          color: #ffffff;
+        border: none;
+      }
+
+    }
+  }
+}
+

@@ -1,0 +1,80 @@
+#create-product{
+  background-color: #ffffff;
+  width: 1000px;
+  border-radius: 12px;
+  padding: 8px 16px;
+  .title{
+    font-size: 20px;
+    color: #000000;
+    span{
+      color: #dc3545;
+    }
+  }
+  .name-product{
+    margin-bottom: 20px;
+
+    input{
+      width: 500px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid #ECECEC;
+      padding: 0 8px;
+      color: #000000;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .characteristics{
+    textarea{
+      width: 500px;
+      height: 100px;
+      resize: none;
+      border: 1px solid #ECECEC;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .price{
+    input{
+      width: 500px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid #ECECEC;
+      padding: 0 8px;
+      color: #000000;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .btn-create{
+    margin-top: 20px;
+    button{
+      background-color: #ffffff;
+      border-radius: 4px;
+      padding: 4px 8px;
+      border: 1px solid #ECECEC;
+      color: #000000;
+
+      &:hover{
+        color: #ffffff;
+        background-color: #0d6efd;
+      }
+    }
+  }
+  .image{
+    input{
+      width: 500px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid #ECECEC;
+      padding: 0 8px;
+      color: #000000;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+}

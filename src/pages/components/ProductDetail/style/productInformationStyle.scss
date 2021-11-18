@@ -1,0 +1,116 @@
+#product-detail{
+  margin-top: 30px;
+  .image-product{
+    width: 400px;
+    height: 400px;
+    background-color: #ECECEC;
+    margin-right: 30px;
+    overflow: hidden;
+    border-radius: 8px;
+    img{
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .product-information{
+    width: 350px;
+    .name-product{
+      h1{
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    .price{
+      p{
+        font-size: 30px;
+        color: #dc3545;
+      }
+    }
+    .add-to-cart{
+      cursor: pointer;
+      i{
+        font-size: 30px;
+        color: #1b9e3e;
+      }
+
+    }
+    .favourite{
+      cursor: pointer;
+      margin-left: 30px;
+      i{
+        font-size: 30px;
+        color: #4f5d73;
+        &:hover{
+          color: #dc3545;
+        }
+      }
+    }
+    .btn-buy-now{
+      margin-right: 30px;
+      button{
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 6px 8px;
+        font-size: 18px;
+        border: 1px solid #1b9e3e;
+        &:hover{
+          background-color: #1b9e3e;
+          color: #ffffff;
+        }
+      }
+    }
+    .description{
+      margin-top: 30px;
+      max-width: 500px;
+      h2{
+        font-size: 20px;
+      }
+    }
+  }
+  .shop-information{
+    margin-left: 30px;
+
+    .image-shop{
+      width: 100px;
+      height: 100px;
+      background-color: #ECECEC;
+      margin-right: 30px;
+      overflow: hidden;
+      border-radius: 8px;
+      overflow: hidden;
+      img{
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .info{
+      .name-shop{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .btn-nav{
+        button{
+          background-color: #ffffff;
+          border-radius: 4px;
+          padding: 6px 8px;
+          font-size: 18px;
+          border: 1px solid #1b9e3e;
+          &:hover{
+            background-color: #1b9e3e;
+            color: #ffffff;
+          }
+          &:first-child{
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.loading{
+  font-size: 50px;
+  color: #1b9e3e;
+  position: fixed;
+  top: 250px;
+  left: 50%;
+}

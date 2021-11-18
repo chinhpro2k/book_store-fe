@@ -1,0 +1,47 @@
+#menu-center {
+  .in {
+    display: block;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    margin: 0 5px;
+    border-radius: 3px;
+    color: #C1C1C1;
+    font-weight: 600;
+    background-color: #ffffff;
+    padding: 12px 18px;
+    display: block;
+  }
+  li{
+    i{
+      margin-right: 8px;
+    }
+  }
+
+  .active-sub {
+    a:first-child {
+      background-color: #0d6efd;
+      color: #ffffff;
+    }
+
+    .collapse {
+      a {
+        background-color: #ffffff;
+        color: #C1C1C1;
+      }
+
+      .children {
+
+      }
+    }
+  }
+  .active-link{
+    a{
+      color: #0d6efd!important;
+    }
+  }
+}

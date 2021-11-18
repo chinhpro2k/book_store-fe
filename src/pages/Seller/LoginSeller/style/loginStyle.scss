@@ -1,0 +1,119 @@
+#login-form{
+  .header-login{
+    padding: 20px 16px 0 16px;
+    background-color: #f28466;
+    border-bottom: 1px solid #00b14f;
+    padding-bottom: 12px;
+    .logo{
+      a{
+        flex: 0 0 auto;
+        width: 10rem;
+        padding: 0 0 0 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 2.5rem;
+        cursor: pointer;
+        color: #ffffff;
+      }
+      .nav-login{
+        h2{
+          font-size: 30px;
+          color: #000000;
+        }
+        a{
+          font-size: 14px;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+
+    }
+    .help{
+      cursor: pointer;
+      p{
+        margin: 0;
+        color: #00b14f;
+        font-size: 16px;
+      }
+    }
+  }
+  .banner-img{
+    width: 500px;
+    height: 500px;
+    background-color: #ECECEC;
+    margin-right: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    img{
+      width: 500px;
+      height: 500px;
+    }
+  }
+  .form-login{
+    margin-right: 200px;
+    width: 256px;
+    .title{
+      color: #ffffff;
+      font-size: 25px;
+    }
+    .form-input{
+      margin-bottom: 20px;
+      input{
+        border-radius: 8px;
+        padding: 4px 16px;
+        outline: none;
+        border: none;
+        width: 100%;
+        &:focus{
+          border: 1px solid #00b14f;
+          outline: none;
+        }
+      }
+      p{
+        margin-bottom: 8px;
+        color: #ffffff;
+      }
+      .user-name{
+        margin-bottom: 15px;
+      }
+      .error{
+        border: 1px solid #e55353;
+        box-shadow: 0 0 4px 4px #e55353;
+      }
+      .password{
+        .show-pass{
+          top: 35px;
+          right: 10px;
+          cursor: pointer;
+        }
+      }
+      .forgot-pass{
+        margin-top: 12px;
+        p{
+          margin: 0;
+          color: #ffffff;
+          cursor: pointer;
+          &:first-child{
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+    .footer-form{
+      button{
+        width: 120px;
+        height: 40px;
+        color: #00b14f;
+        border-radius: 8px;
+        border: 1px solid #00b14f;
+        &:hover{
+          background-color: #00b14f;
+          color: #ffffff;
+        }
+        &:first-child{
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

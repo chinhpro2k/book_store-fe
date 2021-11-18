@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.passInput{
+    width: 360px;
+    height: 40px;
+    margin: 0 20px;
+    border-radius: 3px;
+    border: 1px solid #c7cacc;
+    padding: 0 15px;
+    
+
+}
+
+.label{
+    font-size: 14px;
+    color: #747474;
+    width: 160px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-passBuyer{
+    min-width: 993px;
+    min-height: 410px;
+    background-color: #fff;
+    padding: 0 30px;
+    
+    .content-passBuyer{
+        
+      .h-passBuyer{
+          padding: 18px 0;
+          border-bottom: 1px solid #eceef1;
+          
+
+          .h-passBuyer__text{
+            padding: 0;
+            margin: 0;
+        }
+      }
+    }
+
+    .form-passBuyer{
+        
+        
+
+        .form-passBuyer__currentPass{
+            margin-top: 25px;
+            display: flex;
+            width: 800px;
+            height: 55px;
+            align-items: center;
+            
+            
+
+            .label{
+
+            }
+
+            
+
+            .forgotPass{
+                font-size: 14px;
+
+            }
+
+        
+
+
+            
+            
+        }
+
+        .form-passBuyer__newPass{
+            display: flex;
+            width: 800px;
+            height: 55px;
+            align-items: center;
+
+
+
+        }
+
+
+        .form-passBuyer__confirmPass{
+            display: flex;
+            width: 800px;
+            height: 55px;
+            align-items: center;
+
+           
+        }
+
+        .form-passBuyer__no-confirm{
+            border-style: none;
+            min-width: 101px;
+            height: 40px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 10px 0 0 179px;
+        }
+
+        .form-passBuyer__no-confirm:hover{
+            color: #fff;
+            background-color: #00b14f;
+
+       
+        }
+
+
+
+
+        // nút xác nhận khi đc confirm
+        .form-passBuyer__confirm{
+            border-style: none;
+            min-width: 101px;
+            height: 40px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 10px 0 0 179px;
+            color: #fff;
+            background-color: #00b14f;
+            
+
+        }
+
+
+    }
+}

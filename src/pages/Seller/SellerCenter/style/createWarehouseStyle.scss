@@ -1,0 +1,43 @@
+.form-warehouse{
+  p{
+    margin-bottom: 0;
+  }
+  input{
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #0d6efd;
+    padding: 4px 8px;
+    &:focus{
+      outline: none;
+    }
+  }
+  .name{
+    margin-bottom: 20px;
+  }
+}
+.btn-register{
+  button{
+    background-color: #ffffff;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    margin-top: 20px;
+    border-radius: 4px;
+    &:hover{
+      color: #ffffff;
+      background-color: #0d6efd;
+    }
+  }
+}
+.btn-link{
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  margin-top: 20px;
+  border-radius: 4px;
+  margin-left: 12px;
+  &:hover{
+    color: #ffffff;
+    background-color: #0d6efd;
+  }
+}

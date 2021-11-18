@@ -1,0 +1,115 @@
+.cart_buyer{
+    width: 1200px;
+    
+    .cart__header{
+        display: flex;
+        border: solid 1px #efefef;
+        color: #888;
+        background-color: #fff;
+        height: 55px;
+        margin: 0 12px;
+        padding: 0 20px;
+        align-items: center;
+        font-size: 14px;
+        .cart__header-item1{
+            width: 46%;
+        }
+        .cart__header-item2{
+            width:16% ;
+        }
+        .cart__header-item3{
+            width: 15%;
+        }
+        .cart__header-item4{
+            width: 10%;
+        }
+        .cart__header-item5{
+            width: 13%;
+
+        }
+        
+       
+    }
+
+    .cart__body{
+        
+        .cart__list{
+            // background-color: aqua;
+            list-style: none;
+            padding-left: 12px;
+            .cart__item{
+                background-color: #fff;
+                margin-top: 12px;
+                padding-left: 18px;
+                padding-right: 13px;
+                border: 1px solid #efefef;
+                .cart__item-header{
+                    height: 53px;
+                  
+                   
+                    border-bottom: solid 1px #efefef;
+                    .cart__item-tenshop{
+                        line-height: 53px;
+                    }
+
+                }
+                .cart__item-body{
+                    // background-color: blue;
+                   display: flex;
+                    align-items: center;
+                    .cart__item-info{
+                        width: 45%;
+                        display: flex;
+                        .cart__item-checkbox{
+                            align-self: center;
+                            justify-self: center;
+                            margin-right: 10px;
+                        }
+                        .cart__item-img{
+                            width: 80px;
+                            object-fit: contain;
+
+                        }
+                        .Cart__item-name{
+                            justify-self: center;
+                            align-self: center;
+
+                        }
+                    }
+                    .cart__item-dongia{
+                        width: 12%;
+                    }
+                    .cart__item-soluong{
+                        display: inline-flex;
+                        width: 19%;
+                        .btn-success{
+                            margin: 0 12px;
+                        }
+                        .cart__item-soluong-text{
+                            margin: 0 4px;
+
+                        }
+                        .cart__item-btn-add{
+                            margin: 0 12px;
+                        }
+
+                    }
+                    .cart__item-sotien{
+                        width: 10%;
+
+                    }
+                    .cart__item-thaotac{
+                        width: 13%;
+                        .cart__item-btn{
+
+                        }
+
+                    }
+                 
+                }
+            }
+        }
+    }
+
+}
+

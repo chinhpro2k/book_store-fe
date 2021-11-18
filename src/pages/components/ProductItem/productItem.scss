@@ -1,0 +1,119 @@
+@import 'scss/variables';
+.h-product-item {
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  .h-p-item-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    border: 1px solid transparent;
+    box-shadow: $elevations-2;
+    &:hover {
+      border-color: $base-color;
+      transform: translateY(-0.1rem);
+    }
+    .h-p__img {
+      position: relative;
+      width: 188px;
+      height: 188px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .h-p__discount {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2rem;
+        background-color: $yellow;
+
+        .h-discount__num {
+          line-height: 1;
+          text-align: center;
+          color: red;
+        }
+        .h-discount__label {
+          font-size: 0.8rem;
+          line-height: 1;
+          color: white;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 2rem;
+          border-left: 1.25rem solid $yellow;
+          border-right: 1.25rem solid $yellow;
+          border-bottom: 0.5rem solid transparent;
+        }
+      }
+    }
+
+    .h-p__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+      .h-content__top {
+        flex: 1;
+        .h-p__name {
+          font-size: 0.8rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .h-content__bottom {
+        flex-shrink: 0;
+        margin-top: auto;
+
+        .h-p__voucher {
+          display: flex;
+          .h-voucher__item {
+            display: flex;
+            color: $white;
+            svg {
+              height: 1rem;
+              stroke: $base-color;
+              fill: $base-color;
+            }
+            .h-voucher__item--text {
+              height: 1rem;
+              font-size: 0.6rem;
+              background-color: $base-color;
+            }
+          }
+        }
+        .h-p__info {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          .h-p__price {
+            color: red;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+          }
+          .h-p__sold {
+            font-size: 0.8rem;
+            color: $gray-600;
+          }
+        }
+      }
+    }
+    
+  }
+  
+}
