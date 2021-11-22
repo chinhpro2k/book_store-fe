@@ -13,12 +13,14 @@ function SignUpBuyer() {
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
   const [rePassword, setRePassword] = useState('')
+  const [name, setName] = useState('')
 
   const handleSignUp = async () => {
-    if (phone.length !== 10) return helper.toast('warning', 'Số điện thoại không hợp lệ')
+    if (phone.length ===0) return helper.toast('warning', 'Số điện thoại không hợp lệ')
     if (password.length < 6) return helper.toast('warning', 'Mật khẩu quá ngắn')
     if (password !== rePassword) return helper.toast('warning', 'Mật khẩu nhập lại không đúng')
-    let signUpRes = await auth.signUp(phone, password, 'buyer')
+    if (name .length===0) return helper.toast('warning', 'Nhập lại tên')
+    let signUpRes = await auth.signUp(phone, password,name)
     if (signUpRes?.error) return helper.toast('danger', signUpRes.msg)
 
     helper.toast('success', "SignUp success!! Let's login ")
@@ -46,10 +48,18 @@ function SignUpBuyer() {
             <div className='row m-1 flex-shrink-0'>
               <FormGroup className='p-0 mb-3'>
                 <Input
+                  type='text'
+                  placeholder='Nhập tên của bạn'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FormGroup>
+              <FormGroup className='p-0 mb-3'>
+                <Input
                   type='phone'
-                  placeholder='Số điện thoại'
+                  placeholder='tài khoản'
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value.replace(/[^\d]/g, ''))}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </FormGroup>
               <FormGroup className='p-0 mb-3'>
