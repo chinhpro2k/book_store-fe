@@ -1,6 +1,7 @@
 // import NoticeBuyer from 'pages/Buyer/NoticeBuyer/NoticeBuyer'
 
 // import VoucherBuyer from 'pages/Buyer/Voucher/VoucherBuyer'
+import BookItem from 'pages/Buyer/BookItem/BookItem'
 import React from 'react'
 
 const HomeBuyer = React.lazy(() => import('pages/Buyer/HomeBuyer'))
@@ -20,6 +21,12 @@ routes.buyer = [
     exact: true,
     component: HomeBuyer,
     isProtected: false,
+  },
+  {
+    path: '/book',
+    exact: true,
+    component: BookItem,
+    isProtected: true,
   },
   {
     path: '/cart',
@@ -62,7 +69,8 @@ routes.buyer = [
         exact: true,
         component: VoucherBuyer,
         isProtected: true,
-      }
+      },
+      
     ],
   },
 ]
