@@ -14,7 +14,7 @@ function Shipment(props) {
     const [listAddress, setListAddress] = useState([])
     useEffect(()=>{
         const fetchListAddress = async() =>{
-          let res = await request.post('/api/address' , {id : user.id})
+          let res = await request.post('/api/address' , {id : user.customerId})
           
           
           setListAddress(res)
