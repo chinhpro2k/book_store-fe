@@ -11,6 +11,19 @@ function Shipment(props) {
     const [shipment, setShipment] = useState('')
     const [price, setPrice] = useState()
     const [address, setAddress] = useState('')
+    const [listAddress, setListAddress] = useState([])
+    useEffect(()=>{
+        const fetchListAddress = async() =>{
+          let res = await request.post('/api/address' , {id : user.id})
+          
+          
+          setListAddress(res)
+          console.log(res)
+            }
+            fetchListAddress()
+      },[])
+
+   
 
     const handleCreateShipment = async () => {
 
@@ -30,7 +43,7 @@ function Shipment(props) {
         }
 
         const result = await request.post("/api/shipment1/create", {
-            shipment: shipment, price: price, address: address, order_id: 1
+            shipment: shipment, price: price, address: address,
 
         })
         if (result?.error) return helper.toast('danger', 'Create error')
@@ -54,9 +67,9 @@ function Shipment(props) {
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Giao hàng nhanh</a>
-                        <a class="dropdown-item" href="#">Giao hàng tiết kiệm</a>
-                        <a class="dropdown-item" href="#">Giao hàng hỏa tốc</a>
+                        <div class="dropdown-item" href="#" onClick={}>Giao hàng nhanh  </div>
+                        <div class="dropdown-item" href="#">Giao hàng tiết kiệm</div>
+                        <div class="dropdown-item" href="#">Giao hàng hỏa tốc</div>
                     </div>
                 </div>
                 <div class="dropdown show">
@@ -65,9 +78,15 @@ function Shipment(props) {
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Giao hàng nhanh</a>
-                        <a class="dropdown-item" href="#">Giao hàng tiết kiệm</a>
-                        <a class="dropdown-item" href="#">Giao hàng hỏa tốc</a>
+                        {listAddress.map((value,i)=>{
+                            return (
+                                <div>
+                                    <div>{value.phone}</div>
+                                    <div>{value.city} {value.disctrict} {value.street}</div>
+                                </div>
+                                
+                            )
+                        })}
                     </div>
                 </div>
              

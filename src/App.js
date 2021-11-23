@@ -17,6 +17,7 @@ import SellerCenter from './pages/Seller/SellerCenter'
 import CPLayout from './layouts/CPLayout'
 import ProductDetail from './pages/components/ProductDetail'
 import local from './services/local'
+import ProfileBuyer from './pages/Buyer/BuyerPage/Account/ProfileBuyer'
 function App() {
   useEffect(()=>{
     if (local.get('user')===undefined){
@@ -67,6 +68,11 @@ function App() {
             exact path='/product-detail/:id'
             name='CP Layout'
             render={(props) => <ProductDetail {...props} />}
+          />
+            <Route
+            exact path='/buyer/account/profile'
+            name='CP Layout'
+            render={(props) => <ProfileBuyer {...props} />}
           />
             <Route  path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
