@@ -16,13 +16,12 @@ function ProfileBuyer() {
   const [numberphone, setNumberphone] = useState('')
   const [isChangeAddress, setIsChangeAddress] = useState(false)
   useEffect(() => {
-    const fetchProfile = async () => {
-      let res = await request.post('/api/customer/getById', { customerId: user.customerId })
-      setProfile(res.customer)
-    }
     fetchProfile()
   }, [])
-
+  const fetchProfile = async () => {
+    let res = await request.post('/api/customer/getById', { customerId: user.customerId })
+    setProfile(res.customer)
+  }
   const handleChangeProfile = (key, value) => {
     let profileNew = { ...profile }
     profileNew[key] = value
