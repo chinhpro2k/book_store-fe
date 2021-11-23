@@ -13,6 +13,7 @@ function ProfileBuyer() {
   const [street, setStreet] = useState('')
   const [district, setDistrict] = useState('')
   const [city, setCity] = useState('')
+  const [email, setEmail] = useState('')
   const [numberphone, setNumberphone] = useState('')
   const [isChangeAddress, setIsChangeAddress] = useState(false)
   useEffect(() => {
@@ -21,6 +22,7 @@ function ProfileBuyer() {
   const fetchProfile = async () => {
     let res = await request.post('/api/customer/getById', { customerId: user.customerId })
     setProfile(res.customer)
+    console.log(res)
   }
   const handleChangeProfile = (key, value) => {
     let profileNew = { ...profile }
@@ -37,11 +39,14 @@ function ProfileBuyer() {
     }
   }
   const handleClickSave = async () => {
-    let res = await request.post('/user/update', {
-      id: user.id,
+    let res = await request.post('/api/customer/update', {
+      customerId: user.customerId,
       name: profile.name,
       gender: profile.gender,
-      birthday: profile.birthday
+      date_of_birth: profile.birthday,
+      email:profile.email,
+      numberphone:profile.numberphone,
+      sex:profile.gender
     })
     if (res?.error == 0) {
       helper.toast('success', 'add address success')
@@ -75,14 +80,14 @@ function ProfileBuyer() {
               <label htmlFor='' className='profile-label'>
                 Tên Đăng Nhập
               </label>
-              <p className='profile-text'>{profile.name}</p>
+              <p className='profile-text'>{profile.username}</p>
             </div>
             {/* Ten */}
             <div className='profile-label-input'>
               <label htmlFor='' className='profile-label'>
                 Tên
               </label>
-              <input type='text' className='profile-input' placeholder='Thư Thư' value={profile?.name || ''}
+              <input type='text' className='profile-input' value={profile?.name || ''}
                      onChange={(e) => handleChangeProfile('name', e.target.value)} />
             </div>
 
@@ -92,8 +97,8 @@ function ProfileBuyer() {
                 Email
               </label>
               <input value={profile?.email || ''}
-                     onChange={(e) => handleChangeProfile('name', e.target.value)} />
-              <p className='profile-input'>{profile?.email}</p>
+                     onChange={(e) => handleChangeProfile('email', e.target.value)} />
+              {/*<p className='profile-input'>{profile?.email}</p>*/}
             </div>
 
             {/* SĐT */}
@@ -101,10 +106,10 @@ function ProfileBuyer() {
               <label htmlFor='' className='profile-label'>
                 Số Điện Thoại
               </label>
-              <input value={profile?.email || ''}
-                     onChange={(e) => handleChangeProfile('name', e.target.value)} />
-              <p className='profile-input'>{profile?.email}</p>
-              <p className='profile-input'>{profile?.phone}</p>
+              <input value={profile?.numberphone || ''}
+                     onChange={(e) => handleChangeProfile('numberphone', e.target.value)} />
+              {/*<p className='profile-input'>{profile?.email}</p>*/}
+              {/*<p className='profile-input'>{profile?.phone}</p>*/}
 
             </div>
 
@@ -115,13 +120,13 @@ function ProfileBuyer() {
                 Giới tính
               </label>
               <form className='profile-gender'>
-                <input checked={profile?.gender === 'nam' ? true : false} className='gender' name='gioitinh'
+                <input checked={profile?.sex === 'nam' ? true : false} className='gender' name='gioitinh'
                        type='radio' value='Nam' onChange={(e) => handleChangeProfile('gender', 'nam')} />
                 Nam
-                <input checked={profile?.gender === 'nu' ? true : false} className='gender' name='gioitinh' type='radio'
+                <input checked={profile?.sex === 'nu' ? true : false} className='gender' name='gioitinh' type='radio'
                        value='Nữ' onChange={(e) => handleChangeProfile('gender', 'nu')} />
                 Nữ
-                <input checked={profile?.gender === 'khac' ? true : false} className='gender' name='gioitinh'
+                <input checked={profile?.sex === 'khac' ? true : false} className='gender' name='gioitinh'
                        type='radio' value='Khác' onChange={(e) => handleChangeProfile('gender', 'khac')} />
                 Khác
               </form>
