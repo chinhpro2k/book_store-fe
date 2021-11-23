@@ -12,7 +12,22 @@ function BookItem() {
             console.log(res)
         }
         fetchBook()
+
     }, [])
+
+    const addToCart = (id) => {
+        let res = request.post('/api/cart/save',{
+            totalPrice:1, 
+            quantity:1,
+            bookItemId:id,
+            userId:1,
+            status:1
+        })
+
+        window.location.href = "/cart";
+
+    }
+
     return <div>
         <div className="col-sm-3"></div>
         <div className="col-sm-9">
@@ -30,8 +45,8 @@ function BookItem() {
                                     <h6 className="card-title">Số lượng: {book.amount}</h6>
                                     <h4>đ <span>{book.price}</span></h4>
 
-                                    <a href="#" className="btn btn-primary">
-                                        Thêm vào giỏ</a>
+                                    <button className="btn btn-primary" onClick={()=>addToCart(book.id)}>
+                                        Thêm vào giỏ</button>
                                 </div>
                             </div>
                         </div>
