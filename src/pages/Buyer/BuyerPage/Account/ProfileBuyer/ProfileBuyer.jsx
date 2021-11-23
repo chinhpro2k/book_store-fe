@@ -75,7 +75,7 @@ function ProfileBuyer() {
               <label htmlFor='' className='profile-label'>
                 Tên Đăng Nhập
               </label>
-              <p className='profile-text'>{profile.name}</p>
+              <p className='profile-text'>{profile?.name}</p>
             </div>
             {/* Ten */}
             <div className='profile-label-input'>

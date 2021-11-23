@@ -26,7 +26,7 @@ routes.buyer = [
     path: '/book',
     exact: true,
     component: BookItem,
-    isProtected: true,
+    isProtected: false,
   },
   {
     path: '/cart',

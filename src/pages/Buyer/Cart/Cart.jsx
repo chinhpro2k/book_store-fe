@@ -3,6 +3,7 @@ import './cart.scss'
 import { useState } from 'react'
 import request from 'services/request'
 import local from 'services/local'
+import { Button,Modal } from 'react-bootstrap';
 const user = local.get('user')
 function Cart() {
 
@@ -44,7 +45,10 @@ function Cart() {
     })
   }
 
-  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return <div className="cart_buyer">
     <div className="cart__header">
@@ -69,7 +73,6 @@ function Cart() {
             </div>
             <div className="cart__item-body">
               <div className="cart__item-info">
-              <input type = "checkbox" className="cart__item-checkbox"></input>
                 <img src={cart.img} alt={cart.img} className="cart__item-img" />
                 <p className="Cart__item-name">{cart.title}</p>
               </div>
@@ -106,14 +109,32 @@ function Cart() {
         }
       </ul>
     </div>
+    <div className="btn cart_footer btn-success" >
+      <Button className="btn-order" variant="primary" onClick={handleShow}>
+      Thanh toán
+      </Button>
+    </div>
+
+    
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Thanh toán</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
 
 
-
-
-
-
-
-
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Đóng
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Thanh toán
+          </Button>
+        </Modal.Footer>
+      </Modal>
   </div>
 }
 
