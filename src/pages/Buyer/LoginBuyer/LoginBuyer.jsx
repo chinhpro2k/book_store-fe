@@ -6,6 +6,7 @@ import BuyerLayoutFooter from 'common/footer/BuyerLayoutFooter'
 import helper from 'services/helper'
 import auth from 'services/auth'
 import './loginBuyer.scss'
+import request from '../../../services/request'
 
 function LoginBuyer() {
   const history = useHistory()
@@ -14,11 +15,18 @@ function LoginBuyer() {
   const [password, setPassword] = useState('')
 
   const handleLogin = async () => {
-    let loginRes = await auth.login(phone, password, 'buyer')
-    if (loginRes?.error) return helper.toast('danger', 'Login error')
+    let loginRes = await request.post('/api/customer/login', {
+      'userName': phone,
+      password
+    })
+    if (loginRes.status === 200) {
+      helper.toast('success', 'Login success')
+      localStorage.setItem('user', JSON.stringify(loginRes.customer));
+      history.push('/buyer')
+    } else {
+      helper.toast('danger', 'Login fail')
+    }
 
-    helper.toast('success', 'Login success')
-    history.push('/buyer')
   }
 
   return (
@@ -43,9 +51,9 @@ function LoginBuyer() {
               <FormGroup className='p-0 mb-4'>
                 <Input
                   type='text'
-                  placeholder='Số điện thoại'
+                  placeholder='Tên đăng nhập'
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value.replace(/[^\d]/g, ''))}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </FormGroup>
               <FormGroup className='p-0 mb-4'>

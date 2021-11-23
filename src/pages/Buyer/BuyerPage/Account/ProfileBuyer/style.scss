@@ -13,7 +13,21 @@
     justify-content: flex-end;
 
 }
-
+.popup-address{
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    box-shadow: 0 0 4px 4px #ececec;
+    background-color: #ffffff;
+    padding: 20px;
+    z-index: 20;
+    p{
+        width: 150px;
+    }
+    div{
+        margin-bottom: 20px;
+    }
+}
 p{
     color: black;
     margin: auto 0;

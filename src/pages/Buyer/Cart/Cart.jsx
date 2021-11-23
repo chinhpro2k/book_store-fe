@@ -3,36 +3,14 @@ import './cart.scss'
 import { useState } from 'react'
 import request from 'services/request'
 import local from 'services/local'
+import { Button,Modal } from 'react-bootstrap';
 const user = local.get('user')
 function Cart() {
-  // const [carts, setCart] = useState(
-  //   [
-  //     {
-  //       id: 1,
-  //       shop: 'VTTH',
-  //       img: "https://cf.shopee.vn/file/6760bf2461f3f8a43aaa7089e0f5eaf5_tn",
-  //       product: 'sp duong da',
-  //       price: 93000,
-  //       quantity: 1,
-  //     },
-  //     {
-  //       id: 2,
-  //       shop: 'VTTH1',
-  //       img: "https://cf.shopee.vn/file/6760bf2461f3f8a43aaa7089e0f5eaf5_tn",
-  //       product: 'sp duong da1',
-  //       price: 930001,
-  //       quantity: 1,
-
-
-  //     }
-  //   ]
-  // )
 
   const[carts,setCart] = useState([])
   useEffect(()=>{
     const fetchCart= async() =>{
-      let res = await request.post('/api/cart' , {id : user.id})
-      
+      let res = await request.post('/api/cart/get-carts' , {customerId : 1})
       
       setCart(res)
       console.log(res)
@@ -40,23 +18,37 @@ function Cart() {
         fetchCart()
   },[])
   const changeCart = (id, amount) => {
-  
+    debugger
     let cartsNew = [...carts]
-    let cartItem = cartsNew.find((cart) => cart.id === id)
+    let cartItem = cartsNew.find((cart) => cart.bookItemId === id)
     if(cartItem.quantity+amount === 0) return 
     cartItem.quantity += amount
     setCart(cartsNew)
-    let cart = request.post('/api/cart/update',{id:id, quantity:cartItem.quantity})
-
-
+    let cart = request.post('/api/cart/save',{
+      totalPrice:cartItem.quantity*cartItem.price, 
+      quantity:cartItem.quantity,
+      bookItemId:cartItem.bookItemId,
+      userId:1,
+      status:1
+    })
   }
 
   const deleteCart = (id) => {
-    setCart(carts.filter((cart) => cart.id !== id));
-    let cart = request.post('/api/cart/delete',{id:id})
+    let cartItem = carts.find((cart) => cart.bookItemId === id)
+    setCart(carts.filter((cart) => cart.bookItemId !== id));
+    let cart = request.post('/api/cart/save',{
+      totalPrice:cartItem.quantity*cartItem.price, 
+      quantity:cartItem.quantity,
+      bookItemId:cartItem.bookItemId,
+      userId:1,
+      status:0
+    })
   }
 
-  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return <div className="cart_buyer">
     <div className="cart__header">
@@ -81,9 +73,8 @@ function Cart() {
             </div>
             <div className="cart__item-body">
               <div className="cart__item-info">
-              <input type = "checkbox" className="cart__item-checkbox"></input>
                 <img src={cart.img} alt={cart.img} className="cart__item-img" />
-                <p className="Cart__item-name">{cart.product}</p>
+                <p className="Cart__item-name">{cart.title}</p>
               </div>
               <div className="cart__item-dongia">{cart.price}</div>
               <div className="cart__item-soluong">
@@ -118,14 +109,32 @@ function Cart() {
         }
       </ul>
     </div>
+    <div className="btn cart_footer btn-success" >
+      <Button className="btn-order" variant="primary" onClick={handleShow}>
+      Thanh toán
+      </Button>
+    </div>
+
+    
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Thanh toán</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
 
 
-
-
-
-
-
-
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Đóng
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Thanh toán
+          </Button>
+        </Modal.Footer>
+      </Modal>
   </div>
 }
 
