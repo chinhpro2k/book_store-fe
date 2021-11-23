@@ -13,7 +13,7 @@ function ProductItem(props) {
       <Link to={`/product-detail/${props.product.id}`}>
         <div className='h-p-item-container'>
           <div className='h-p__img'>
-            <img src={props.product.imageUrl} alt='' />
+            <img src={props.product.img} alt='' />
             <div className='h-p__discount'>
               <div className='h-discount__num'>{discount + '%'}</div>
               <div className='h-discount__label'>Gỉam</div>
@@ -21,7 +21,7 @@ function ProductItem(props) {
           </div>
           <div className='h-p__content'>
             <div className='h-content__top'>
-              <div className='h-p__name'>{props.product.name}</div>
+              <div className='h-p__name'>{props.product.title}</div>
             </div>
 
             <div className='h-content__bottom'>
