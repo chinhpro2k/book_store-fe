@@ -38,7 +38,7 @@ routes.buyer = [
   {
     path: '/buyer',
     component: BuyerPage,
-    isProtected: true,
+    isProtected: false,
     subRoutes: [
       {
         path: '/buyer/account/profile',
