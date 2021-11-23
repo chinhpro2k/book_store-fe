@@ -8,11 +8,12 @@ const HomeBuyer = React.lazy(() => import('pages/Buyer/HomeBuyer'))
 const Cart = React.lazy(() => import('pages/Buyer/Cart'))
 const BuyerPage = React.lazy(() => import('pages/Buyer/BuyerPage'))
 const ProfileBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/ProfileBuyer'))
-const AddressBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/AddressBuyer'))
+// const AddressBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/AddressBuyer'))
 const PasswordBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/PasswordBuyer'))
 const HomeSeller = React.lazy(() => import('pages/Seller/HomeSeller'))
 const NoticeBuyer = React.lazy(() => import('pages/Buyer/NoticeBuyer'))
 const VoucherBuyer = React.lazy(() => import('pages/Buyer/VoucherBuyer'))
+const Address = React.lazy(() => import('pages/Buyer/Address'))
 let routes = {}
 
 routes.buyer = [
@@ -46,12 +47,12 @@ routes.buyer = [
         component: ProfileBuyer,
         isProtected: true ,
       },
-      {
-        path: '/buyer/account/address',
-        exact: true,
-        component: AddressBuyer,
-        isProtected: true,
-      },
+      // {
+      //   path: '/buyer/account/address',
+      //   exact: true,
+      //   component: AddressBuyer,
+      //   isProtected: true,
+      // },
       {
         path: '/buyer/account/password',
         exact: true,
@@ -70,7 +71,12 @@ routes.buyer = [
         component: VoucherBuyer,
         isProtected: true,
       },
-      
+      {
+        path: '/buyer/address',
+        exact: true,
+        component: Address,
+        isProtected: true,
+      }
     ],
   },
 ]

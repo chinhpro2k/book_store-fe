@@ -1,0 +1,39 @@
+.address__buyer{
+    .header{
+        display:flex;
+        justify-content: end;
+    }
+    .address__list{
+        list-style: none;
+        .address-item{
+            margin-top:12px;
+            padding : 12px;
+            border: 1px solid #efefef;
+            background-color: white;
+            display: flex;
+            // .address-item-info{
+            //     width:80%;
+            //     .name{
+
+            //     }
+            //     .phone{
+    
+            //     }
+            //     .address{
+                    
+            //     }
+
+            // }
+            .address-item-btn{
+                align-self: center;
+                .btn1{
+                    margin-right: 20px;
+                }
+                // .btn2{
+
+                // }
+            }
+        }
+
+    }
+}

@@ -83,4 +83,11 @@ const NAV = [
     color: 'danger',
     isSubNav: false,
   },
+  {
+    name: 'Địa chỉ nhận hàng',
+    url: '/buyer/address',
+    icon: 'far fa-star',
+    color: 'danger',
+    isSubNav: false,
+  },
 ]
